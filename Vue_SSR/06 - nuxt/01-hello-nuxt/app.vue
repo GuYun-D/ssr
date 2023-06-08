@@ -9,10 +9,12 @@
     <ClientOnly fallback-tag="h3" fallback="loading...">
       <div class="global-style-1 hh">我只会在客户端将进行渲染</div>
 
-      <template #fallback> 
-        我是自定义的插槽
-      </template>
+      <template #fallback> 我是自定义的插槽 </template>
     </ClientOnly>
+
+    <img src="/image/favicon.ico" alt="" />
+
+    <div class="i-bg"></div>
   </div>
 </template>
 
@@ -60,8 +62,13 @@ useHead({
 
 // @use '~/assets/styles/vars.scss' as vb;
 
-h1{
+h1 {
   color: vb.$scolor;
   @include vb.border();
+}
+.i-bg {
+  width: 100px;
+  height: 100px;
+  background: url(/image/favicon.ico) no-repeat;
 }
 </style>

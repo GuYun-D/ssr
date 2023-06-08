@@ -1,0 +1,46 @@
+# 文件相关介绍
+
+## package.json
+
+```js
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build", // 打包正式版本 -> nitro -> .output
+    "dev": "nuxt dev", // 开发环境运行
+    "generate": "nuxt generate", // 打包正式版本项目，但是会提前预渲染每个路由 ->nuxt build --prerender
+    "preview": "nuxt preview", // 打包项目之后本地预览效果
+    "postinstall": "nuxt prepare" // npm生命周期钩子，当执行完npm install 之后会自定执行 nuxt prepare -> 生成.nuxt和ts类型等等
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@types/node": "^18",
+    "nuxt": "^3.5.2"
+  }
+}
+
+```
+
+
+
+## App.vue 应用入口
+
+默认情况下，Nuxt会将此文件视为入口点，并为应用程序的每个路由呈现其内容，常用于
+
+- 定义页面布局Layout或者自定义布局，如：NuxtLayout
+- 定义路由占位，如：NuxtPage
+- 编辑全局样式
+- 全局监听路由
+
+
+
+## nuxt.config
+
+就类似于vue.config
+
+
+
+其他
+
+![image-20230607205907182](E:\front_end-project\my-project\SSR\images\image-20230607205907182.png)

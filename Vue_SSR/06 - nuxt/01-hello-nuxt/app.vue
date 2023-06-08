@@ -7,7 +7,7 @@
     </Head>
 
     <ClientOnly fallback-tag="h3" fallback="loading...">
-      <div>我只会在客户端将进行渲染</div>
+      <div class="global-style-1 hh">我只会在客户端将进行渲染</div>
 
       <template #fallback> 
         我是自定义的插槽
@@ -54,3 +54,14 @@ useHead({
   ],
 });
 </script>
+
+<style lang="scss" scoped>
+// @import '~/assets/styles/vars.scss';
+
+// @use '~/assets/styles/vars.scss' as vb;
+
+h1{
+  color: vb.$scolor;
+  @include vb.border();
+}
+</style>

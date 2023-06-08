@@ -5,6 +5,14 @@
     <Head>
       <Meta name="keyword" content="这是一个简单的网站"></Meta>
     </Head>
+
+    <ClientOnly fallback-tag="h3" fallback="loading...">
+      <div>我只会在客户端将进行渲染</div>
+
+      <template #fallback> 
+        我是自定义的插槽
+      </template>
+    </ClientOnly>
   </div>
 </template>
 
@@ -28,21 +36,21 @@ if (process.client) {
 let appConfig = useAppConfig(); // 服务端和客户端都可以
 console.log(appConfig.title);
 
-onMounted(() => { // 只会在客户端运行
+onMounted(() => {
+  // 只会在客户端运行
   document.title = appConfig.title;
 });
 
-
 useHead({
   bodyAttrs: {
-    class: 'body-container'
+    class: "body-container",
   },
 
   script: [
     {
-      src: 'http://baidu.com',
-      body: true
-    }
-  ]
-})
+      src: "http://baidu.com",
+      body: true,
+    },
+  ],
+});
 </script>
